@@ -1,0 +1,125 @@
+/********************************************
+* Reset
+********************************************/
+body,
+h1, ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/********************************************
+* Common - Root
+********************************************/
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 700;
+  src: local("Spoqa Han Sans Bold"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 500;
+  src: local("Spoqa Han Sans Medium"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 400;
+  src: local("Spoqa Han Sans Regular"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@3.1.0/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf")
+      format("truetype");
+}
+
+:root {
+  font-family: "Spoqa Han Sans Neo";
+  font-size: 62.5%;
+  var(--header-back-color, #fff);
+}
+
+body {
+  font-size: 1.6rem;
+}
+/********************************************
+* Common - Layout
+********************************************/
+.l_layout {
+  padding: 30rem 20rem;
+}
+
+.l_row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2rem;
+}
+
+.l_col {
+  width: 33.33333%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  background-color: darkmagenta;
+}
+
+
+/********************************************
+* Common - Obejct
+********************************************/
+.o_p20 {
+  padding: 2rem;
+}
+
+/********************************************
+* Component
+********************************************/
+.header {
+  background-color: var(----header-back-color);
+  height: 10rem;
+  box-shadow: 0px 2px 2px gray;
+  margin-bottom: 2px;
+}
+
+.header-inner {
+  display: flex;
+  padding: 3rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-inner__title {
+  font-size: 2.5rem;
+}
+
+.header-inner__mode img {
+  width: 1.6rem;
+  vertical-align: top;
+}
+
+.header-inner__mode span {
+  font-size: 1.6rem;
+}
+
+
+
+.contents {
+  background-color: darkkhaki;
+}
