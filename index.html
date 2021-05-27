@@ -12,24 +12,18 @@
       <div class="header-inner">
         <h1 class="header-inner__title">Where in the world?</h1>
         <div class="header-inner__mode">
-          <!-- <img src="./image/moon-outline.svg" alt="dark 모드" />
-          <img
-            src="./image/sunny-outline.svg"
-            alt="light 모드"
-            style="color: wheat"
-          /> -->
-          <img
-            src="https://img.icons8.com/emoji/32/000000/crescent-moon-emoji.png"
-          />
-          <span>Dark Mode</span>
+          <label class="theme-switch" for="toggle">
+            <input type="checkbox" id="toggle" />
+            <div class="slider"></div>
+          </label>
+          <div class="theme-icon">
+            <img
+              src="https://img.icons8.com/emoji/32/000000/crescent-moon-emoji.png"
+            />
+            <em>Dark Mode</em>
+          </div>
         </div>
       </div>
-
-      <!-- 
-      <img
-        src="https://img.icons8.com/emoji/32/000000/crescent-moon-emoji.png"
-      />
-      <img src="https://img.icons8.com/offices/32/ffffff/sun.png" /> -->
     </header>
     <section class="contents">
       <div class="search o_pc_flex o_pc_jcsb o_pc_aic">
@@ -42,16 +36,17 @@
         <div class="search__select">
           <div class="filter-item">
             <span>Filter by Region</span>
-            <span>화살표</span>
+            <span id="filter-arrow" class="filter-arrow">화살표</span>
           </div>
-          <ul class="filter-list">
-            <li>Africa</li>
-            <li>America</li>
-            <li>Asia</li>
-            <li>Asia</li>
-            <li>Asia</li>
-            <li>Asia</li>
-            <li>Asia</li>
+          <ul class="filter-list" id="filter-list">
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
+            <li><a href="#">Africa</a></li>
           </ul>
         </div>
       </div>
@@ -59,144 +54,161 @@
         <ul class="l_row">
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/deu.svg"
-                  alt="독일"
-                />
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/deu.svg"
+                    alt="독일"
+                  />
+                </div>
 
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/usa.svg"
-                  alt="미국"
-                />
-              </div>
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/usa.svg"
+                    alt="미국"
+                  />
+                </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/bra.svg"
-                  alt="브라질"
-                />
-              </div>
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/bra.svg"
+                    alt="브라질"
+                  />
+                </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/isl.svg"
-                  alt="아이슬란드"
-                />
-              </div>
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/isl.svg"
+                    alt="아이슬란드"
+                  />
+                </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/afg.svg"
-                  alt="아프가니스탄"
-                />
-              </div>
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/afg.svg"
+                    alt="아프가니스탄"
+                  />
+                </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/ala.svg"
-                  alt="Aland Islands"
-                />
-              </div>
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/ala.svg"
+                    alt="Aland Islands"
+                  />
+                </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/alb.svg"
-                  alt="알바니아"
-                />
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/alb.svg"
+                    alt="알바니아"
+                  />
+                </div>
 
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
           <li class="l_col l_col_mobile_12_12 l_col_tablet_6_12 l_col_pc_3_12">
             <div class="country">
-              <div class="country__img-cover">
-                <img
-                  class="country__img"
-                  src="https://restcountries.eu/data/dza.svg"
-                  alt="알제리"
-                />
-              </div>
-              <div class="country__info">
-                <h2>Gemany</h2>
-                <p><strong>Population:</strong> 81,770,900</p>
-                <p><strong>Region: </strong>Europe</p>
-                <p><strong>Capital: </strong>Berlin</p>
-              </div>
+              <a href="./detail.html" class="coutry-link">
+                <div class="country__img-cover">
+                  <img
+                    class="country__img"
+                    src="https://restcountries.eu/data/dza.svg"
+                    alt="알제리"
+                  />
+                </div>
+                <div class="country__info">
+                  <h2>Gemany</h2>
+                  <p><strong>Population:</strong> 81,770,900</p>
+                  <p><strong>Region: </strong>Europe</p>
+                  <p><strong>Capital: </strong>Berlin</p>
+                </div>
+              </a>
             </div>
           </li>
         </ul>
       </div>
     </section>
   </body>
+  <script src="./country.js"></script>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <h1 class="header-inner__title">Where in the world?</h1>
+        <div class="header-inner__mode">
+          <label class="theme-switch" for="toggle">
+            <input type="checkbox" id="toggle" />
+            <div class="slider"></div>
+          </label>
+          <div class="theme-icon">
+            <img
+              src="https://img.icons8.com/emoji/32/000000/crescent-moon-emoji.png"
+            />
+            <em>Dark Mode</em>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="contents">
+      <div class="history-back">
+        <a href="./index.html" class="history-back__button" role="button">
+          Back
+        </a>
+      </div>
+      <div class="country-detail">
+        <div class="o_pc_flex">
+          <div class="o_pc_item1">
+            <div class="country__img-cover country-detail__info1">
+              <img
+                class="country__img"
+                src="https://restcountries.eu/data/deu.svg"
+                alt="독일"
+              />
+            </div>
+          </div>
+          <div class="o_pc_item2">
+            <div class="o_pc_flex">
+              <div class="country-detail__info2">
+                <h2>Belgium</h2>
+                <p><strong>Native Name:</strong> Belgium</p>
+                <p><strong>Population:</strong> 11,319,511</p>
+                <p><strong>Region:</strong> Europe</p>
+                <p><strong>Sub Region:</strong> Western Europe</p>
+                <p><strong>Captial:</strong> Brussels</p>
+              </div>
+
+              <div class="country-detail__info3">
+                <p><strong>Top Level Domain:</strong> be</p>
+                <p><strong>Currencies:</strong> Euro</p>
+                <p><strong>Languages:</strong> Dutch, Frech, German</p>
+              </div>
+            </div>
+
+            <div class="country-detail__info4">
+              <h3>Border Countries</h3>
+              <ul class="btn-group l_row l_row_thin">
+                <li class="l_col l_col_thin l_col_mobile_4_12">
+                  <a href="#">Germany</a>
+                </li>
+                <li class="l_col l_col_thin l_col_mobile_4_12">
+                  <a href="#">France</a>
+                </li>
+                <li class="l_col l_col_thin l_col_mobile_4_12">
+                  <a href="#">Netherlands</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./country.js"></script>
+</html>

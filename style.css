@@ -1,8 +1,15 @@
+/*! 해더의 하단에 이상한 공백이 생긴다. */
+/*! 이미지 사이즈가 고정적이지 않은 경우 ?? */
+/*! countries 우측에 왜 삐져나오는거지?? */
+/*! 디테일 국기 사진에 width를 줘도 안먹는데 absolute 때문? */
 /********************************************
 * Reset
 ********************************************/
 body,
-h1, ul, h2, p {
+h1,
+ul,
+h2,
+p {
   margin: 0;
   padding: 0;
 }
@@ -17,17 +24,21 @@ img {
   vertical-align: top;
 }
 
-
-input[type=text]{
-  background-color: transparent;
-  border-style: hidden;
-  border-width:0;
-  border-color:transparent;
-  font-family: "Spoqa Han Sans Neo";
-  background-color: brown;
-  font-size: 2rem;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
+input[type="text"] {
+  background-color: transparent;
+  border-style: hidden;
+  border-width: 0;
+  border-color: transparent;
+  font-family: "Spoqa Han Sans Neo";
+  font-size: 2rem;
+  color: inherit;
+  /* background-color: brown; */
+}
 
 /********************************************
 * Common - Root
@@ -71,18 +82,23 @@ input[type=text]{
 :root {
   font-family: "Spoqa Han Sans Neo";
   font-size: 62.5%;
-  var(--header-back-color, #fff);
+  --main-color: #ffffff;
+  --main-backcolor: #fafafa;
+  --font-color: black;
+}
+
+[data-theme="dark"] {
+  --main-color: #2b3843;
+  --main-backcolor: #212e37;
+  --font-color: white;
 }
 
 body {
   font-size: 1.6rem;
-  background-color: antiquewhite;
-  color: black;
+  background-color: var(--main-backcolor);
+  color: var(--font-color);
 }
-.dark-mode {
-  background-color: gray;
-  color: white;
-}
+
 /********************************************
 * Common - Layout
 ********************************************/
@@ -95,21 +111,28 @@ body {
   flex-wrap: wrap;
   margin: 0 -2rem;
   align-items: center;
-  background-color: aqua;
+}
+
+.l_row_thin {
+  margin: 0 -1rem;
 }
 
 .l_col {
   padding: 0 2rem;
   box-sizing: border-box;
   margin-bottom: 2rem;
-  background-color: darkmagenta;
 }
 
+.l_col_thin {
+  padding: 0 1rem;
+}
 
+.l_col_mobile_4_12 {
+  width: 33.33333333%;
+}
 .l_col_mobile_12_12 {
   width: 100%;
 }
-
 
 /********************************************
 * Common - Obejct
@@ -122,11 +145,11 @@ body {
 * Component
 ********************************************/
 .header {
-  background-color: var(----header-back-color);
+  background-color: var(--main-color);
   height: 10rem;
-  box-shadow: 0px 2px 2px gray;
-  margin-bottom: 2px;
+  box-shadow: 0px 1px 1px gray;
 }
+/* !하단 이상한 공간은 뭘까??? */
 
 .header-inner {
   display: flex;
@@ -145,14 +168,77 @@ body {
   align-items: center;
 }
 
-.header-inner__mode span {
-  font-size: 1.6rem;
-  margin-left: 0.5rem;
+.theme-switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
 }
 
+.slider {
+  background-color: peachpuff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 34px;
+}
 
-.contents {
-  background-color: cornflowerblue;
+.slider:before {
+  content: " ";
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 26px;
+  height: 26px;
+  transition: 0.4s;
+  border-radius: 50%;
+  background-color: darkcyan;
+}
+.slider:after {
+  content: " ";
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 26px;
+  height: 26px;
+  transition: 0.4s;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.theme-switch input[type="checkbox"] {
+  display: none;
+}
+
+.theme-switch input + .slider:after {
+  background-image: url(https://img.icons8.com/emoji/32/000000/crescent-moon-emoji.png);
+}
+
+.theme-switch input:checked + .slider:after {
+  background-image: url(https://img.icons8.com/offices/32/ffffff/sun.png);
+  transform: translateX(-100%);
+}
+
+.theme-switch input:checked + .slider:before {
+  transform: translateX(100%);
+}
+
+.theme-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-icon em,
+.theme-icon img {
+  margin-left: 1rem;
+  font-size: 1.6rem;
 }
 
 .search {
@@ -163,17 +249,17 @@ body {
   display: flex;
   align-items: center;
   padding: 2rem;
-  background-color: tomato;
   margin-bottom: 2rem;
+  background-color: var(--main-color);
+  box-shadow: 0px 1px 1px gray;
 }
 
 .search__input img {
   width: 3.2rem;
-  background-color: yellowgreen;
   margin-right: 1rem;
 }
 
-.search__input input[type=text]{
+.search__input input[type="text"] {
   flex-grow: 1;
   min-width: 1rem;
   height: 4.8rem;
@@ -182,10 +268,10 @@ body {
 
 .search__select {
   position: relative;
-  /* margin: 3rem 0 2rem 2rem; */
   width: 50%;
-  background-color: teal;
   padding: 2rem;
+  background-color: var(--main-color);
+  box-shadow: 0px 1px 1px gray;
 }
 
 .filter-item {
@@ -193,18 +279,32 @@ body {
   justify-content: space-between;
 }
 
+.filter-arrow {
+  cursor: pointer;
+}
+
 .filter-list {
-  position:absolute;
-  background-color: violet;
+  display: none;
+  position: absolute;
   top: 6.5rem;
   padding: 2rem;
   left: 0;
   right: 0;
   z-index: 10;
+  background-color: var(--main-color);
 }
 
 .filter-list li {
-  margin: 1.5rem  0;
+  margin: 1.5rem 0;
+}
+
+.filter-list li a {
+  display: block;
+  padding: 1rem;
+}
+
+.filter-list li a:hover {
+  background-color: gainsboro;
 }
 
 .coutries {
@@ -212,17 +312,21 @@ body {
   overflow: hidden;
 }
 
-.country  {
-  background-color: whitesmoke;
+.country {
   border-radius: 0.8rem;
   overflow: hidden;
   width: 80%;
   margin: 0 auto;
-  transition: all .4s;
+  transition: all 0.4s;
+  background-color: var(--main-color);
 }
 
 .country:hover {
   width: 90%;
+}
+
+.coutry-link {
+  display: block;
 }
 
 .country__img-cover {
@@ -233,8 +337,8 @@ body {
 .country__img {
   background-color: gray;
   position: absolute;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -254,23 +358,99 @@ body {
   margin: 1rem 0;
 }
 
+.history-back {
+  margin: 30px 0 40px 20px;
+}
+.history-back__button {
+  display: inline-block;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 2px gray;
+
+  background-color: var(--main-color);
+}
+
+.country-detail {
+  margin: 0 20px;
+}
+
+.country-detail__info1,
+.country-detail__info2,
+.country-detail__info3,
+.country-detail__info4 {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.country-detail__info2 h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.country-detail__info2 p,
+.country-detail__info3 p {
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-group a {
+  display: block;
+  text-align: center;
+  border: 1px solid gray;
+  padding: 15px 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* flex-grow: 1; */
+}
 
 /* Tablet */
-@media ( min-width: 700px ) {
-  .l_col_tablet_12_12 { width: 100%; }
-  .l_col_tablet_11_12 { width: 91.66666667%; }
-  .l_col_tablet_10_12 { width: 83.33333333%; }
-  .l_col_tablet_9_12  { width: 75%; }
-  .l_col_tablet_8_12  { width: 66.66666667%; }
-  .l_col_tablet_7_12  { width: 58.33333333%; }
-  .l_col_tablet_6_12  { width: 50%; }
-  .l_col_tablet_5_12  { width: 41.66666667%; }
-  .l_col_tablet_4_12  { width: 33.33333333%; }
-  .l_col_tablet_3_12  { width: 25%; }
-  .l_col_tablet_2_12  { width: 16.66666667%; }
-  .l_col_tablet_1_12  { width: 8.33333333%; }
+@media (min-width: 700px) {
+  .l_col_tablet_12_12 {
+    width: 100%;
+  }
+  .l_col_tablet_11_12 {
+    width: 91.66666667%;
+  }
+  .l_col_tablet_10_12 {
+    width: 83.33333333%;
+  }
+  .l_col_tablet_9_12 {
+    width: 75%;
+  }
+  .l_col_tablet_8_12 {
+    width: 66.66666667%;
+  }
+  .l_col_tablet_7_12 {
+    width: 58.33333333%;
+  }
+  .l_col_tablet_6_12 {
+    width: 50%;
+  }
+  .l_col_tablet_5_12 {
+    width: 41.66666667%;
+  }
+  .l_col_tablet_4_12 {
+    width: 33.33333333%;
+  }
+  .l_col_tablet_3_12 {
+    width: 25%;
+  }
+  .l_col_tablet_2_12 {
+    width: 16.66666667%;
+  }
+  .l_col_tablet_1_12 {
+    width: 8.33333333%;
+  }
+
   .country__img-cover {
     height: 250px;
+  }
+
+  .country-detail__info1.country__img-cover {
+    height: 500px;
   }
 }
 
@@ -336,6 +516,21 @@ body {
     height: 150px;
   }
 
+  .country-detail__info1 {
+    width: 550px;
+  }
+
+  .country-detail__info1.country__img-cover {
+    height: 500px;
+  }
+
+  .country-detail__info3 {
+    margin: auto 20px;
+  }
+
+  .o_pc_item1 {
+  }
+  .o_pc_item2 {
+    margin: 0 auto;
+  }
 }
-
-
